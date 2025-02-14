@@ -1,0 +1,11 @@
+about
+usage
+render-book
+preview-book
+introducción
+análisis-de-regresión
+metodología-clásica
+probabilidad-condicional
+curva-de-regresión-poblacional
+url-your-book-url-like-httpsbookdown.orgyihuibookdown
+función-de-regresión-poblacional

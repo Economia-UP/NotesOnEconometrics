@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Análisis de regresión | A Minimal Book Example</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Análisis de regresión | A Minimal Book Example" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Análisis de regresión | A Minimal Book Example" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="John Doe" />
+
+
+<meta name="date" content="2025-02-14" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introducción.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i><b>2</b> Introducción</a></li>
+<li class="chapter" data-level="3" data-path="análisis-de-regresión.html"><a href="análisis-de-regresión.html"><i class="fa fa-check"></i><b>3</b> Análisis de regresión</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="análisis-de-regresión.html"><a href="análisis-de-regresión.html#metodología-clásica"><i class="fa fa-check"></i><b>3.1</b> Metodología clásica</a></li>
+<li class="chapter" data-level="3.2" data-path="análisis-de-regresión.html"><a href="análisis-de-regresión.html#probabilidad-condicional"><i class="fa fa-check"></i><b>3.2</b> Probabilidad condicional</a></li>
+<li class="chapter" data-level="3.3" data-path="análisis-de-regresión.html"><a href="análisis-de-regresión.html#función-de-regresión-poblacional"><i class="fa fa-check"></i><b>3.3</b> Función de regresión poblacional</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="análisis-de-regresión" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Análisis de regresión<a href="análisis-de-regresión.html#análisis-de-regresión" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Econometría <span class="math inline">\(\implies\)</span> Medición económica.</strong></p>
+<div id="metodología-clásica" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Metodología clásica<a href="análisis-de-regresión.html#metodología-clásica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Planteamiento de teoría (hipótesis)<br />
+</li>
+<li>Especificación del modelo matemático<br />
+</li>
+<li>Especificación del modelo econométrico<br />
+</li>
+<li>Obtención de datos<br />
+</li>
+<li>Estimación de parámetros del modelo<br />
+</li>
+<li>Pruebas de hipótesis<br />
+</li>
+<li>Pronóstico (predicción)<br />
+</li>
+<li>Modelo para fines de control/política</li>
+</ol>
+<p>Ej. Función consumo keynesiana:</p>
+<p><span class="math display">\[
+c = \alpha + \beta y \quad \forall \ 0&lt; \beta &lt;1
+\]</span></p>
+<p>Las relaciones entre variables económicas son <strong>inexactas</strong>, dada la injerencia de otras variables:</p>
+<p><span class="math display">\[
+\underset{\text{Modelo econométrico} }{c = \alpha + \beta y + u}
+\]</span></p>
+<p><span class="math display">\[
+\underset{ \text{Variable aleatoria con propiedades probabilísticas} }{ u = \text{Error (perturbación estocástica)} }
+\]</span></p>
+<p><span class="math inline">\(u\)</span> incluye todos los factores que afectan <strong>consumo</strong> pero no están en la ecuación: tamaño de familia, edades, etc.</p>
+<p>El modelo requiere ser estimado: obtener valores <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span> a partir de <strong>datos.</strong></p>
+<p>Ej. Gasto en consumo personal</p>
+<ul>
+<li>Regresión: técnica estadística para el estudio de una <strong>variable dependiente</strong> que está en función de una o más <strong>variables independientes.</strong></li>
+<li>Usando los datos de consumo y PIB de BUA se obtiene:</li>
+</ul>
+<p><span class="math display">\[
+\hat c = -231.8 + 0.7194 y
+\]</span></p>
+<p>Donde <span class="math inline">\(\alpha = -231.8, \beta = 0.7194, \hat c = \text{Consumo (estimado)}, y = \text{PIB}\)</span>.</p>
+<p>La interpretación consiste en que un incremento de tasa en el ingreso incrementa (en promedio) el consumo en 0.72 USD.</p>
+<p>Se debe probar si los valores estimados:</p>
+<ol style="list-style-type: decimal">
+<li>Son estadísticamente significativos <span class="math inline">\((\alpha, \beta \neq 0)\)</span><br />
+</li>
+<li>Confirman la teoría (hipótesis) que está siendo probada <span class="math inline">\((0&lt;\beta&lt;1)\)</span></li>
+</ol>
+<p>Si el modelo confirma la teoría (hipótesis), se pueden <strong>pronosticar</strong> valores futuros de la variable dependiente.</p>
+<p>Ej. Suponer un PIB esperado para 1995 de <span class="math inline">\(6,000\)</span> mmd, ¿cuál es el pronóstico de consumo?</p>
+<p><span class="math display">\[
+\hat c = -231.8 + 0.7194(6,000) = 4,084.6
+\]</span></p>
+<p>Suponer que el gobierno considera que un gasto de $4,000 mmd mantendrá la tasa de desempleo en 6.5%. ¿Cuál nivel de ingreso garantizará esta meta de consumo?</p>
+<p><span class="math display">\[
+\begin{aligned}
+\hat c &amp;= -231.8 + 0.7194y \\
+4,000 &amp;= -231.8 + 0.7194y \\
+0.7194y &amp;= 4,000 + 231.8 \\
+y &amp;= \frac{4,231.8}{0.7194} \\
+y^* &amp;= 5,882.40
+\end{aligned}
+\]</span></p>
+<p>Un modelo estimado puede ser usado para fines de control o de política económica (fiscal y monetaria).</p>
+<hr />
+</div>
+<div id="probabilidad-condicional" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Probabilidad condicional<a href="análisis-de-regresión.html#probabilidad-condicional" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Suponer un país con una población de 60 familias. Se estudia el gasto en consumo familiar semanal <span class="math inline">\((y)\)</span> y el ingreso familiar semanal <span class="math inline">\((x)\)</span>.</p>
+<p>Se presenta la distribución del gasto en consumo <span class="math inline">\((y)\)</span> correspondiente a un ingreso fijo <span class="math inline">\((x)\)</span>: la distribución condicional de <span class="math inline">\(y\)</span> dada <span class="math inline">\(x\)</span>.</p>
+<p>Para <span class="math inline">\(P(y|x = 80)\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(y=55|x=80) &amp;= \frac{1}{5} \\
+P(y=60|x=80) &amp;= \frac{1}{5} \\
+P(y=65|x=80) &amp;= \frac{1}{5} \\
+P(y=70|x=80) &amp;= \frac{1}{5} \\
+P(y=75|x=80) &amp;= \frac{1}{5}
+\end{aligned}
+\]</span></p>
+<p>Para cada distribución de probabilidad condicional de <span class="math inline">\(y\)</span>, calculamos su <strong>media (media condicional):</strong></p>
+<p><span class="math display">\[
+E(y|x=80) = 55\left( \frac{1}{5} \right) + 60\left( \frac{1}{5} \right) + 65\left( \frac{1}{5} \right) + 70\left( \frac{1}{5} \right) + 75\left( \frac{1}{5} \right) = 65
+\]</span></p>
+<p><span class="math display">\[
+\mu_{y|x=100} = \frac{\sum_{y}y_{i}}{n} = \frac{462}{6} = 77
+\]</span></p>
+<hr />
+</div>
+<div id="función-de-regresión-poblacional" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Función de regresión poblacional<a href="análisis-de-regresión.html#función-de-regresión-poblacional" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Lugar geométrico de las medias condicionales de la variable dependiente para valores fijos de la variable independiente.</p>
+<p>Se puede deducir que: <span class="math inline">\(E(y|x_i) = f(x_i)\)</span>.</p>
+<p><span class="math display">\[
+E(y|x_i) \rightarrow \text{Función de Regresión Poblacional (FRP)}
+\]</span></p>
+<p>Forma funcional de la FRP:</p>
+<p><span class="math display">\[
+E(y|x_i) = \alpha + \beta x_i \rightarrow \underset{y = ax+b}{\text{Ecuación de recta}}
+\]</span></p>
+<p><span class="math display">\[
+\begin{array}{ccc}
+\alpha, \beta &amp; \rightarrow &amp; \text{Coeficientes de regresión} \\
+\alpha &amp; \rightarrow &amp; \text{Intercepto} \\
+\beta &amp; \rightarrow &amp; \text{Coeficiente de la pendiente}
+\end{array}
+\]</span></p>
+<p><strong>Objetivo:</strong> Estimar <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span> con base en observaciones de <span class="math inline">\(x\)</span> y <span class="math inline">\(y\)</span>.<br />
+Esta desviación de un <span class="math inline">\(y_i\)</span> alrededor de su valor esperado se expresa como:</p>
+<p><span class="math display">\[
+\begin{aligned}
+u_i &amp;= y_i - E(y|x_i) \\
+y_i &amp;= E(y|x_i) + u_i
+\end{aligned}
+\]</span></p>
+<p>Donde <span class="math inline">\(u_i\)</span> es el término de error estocástico, que representa todas las variables omitidas que puedan afectar <span class="math inline">\(y\)</span>, pero no están incluidas en el modelo de regresión.</p>
+<p><span class="math display">\[
+y_i = \alpha + \beta x_i + u_i
+\]</span></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introducción.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-analisisreg.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
