@@ -142,5 +142,8 @@ $$
 Donde $u_i$ es el término de error estocástico, que representa todas las variables omitidas que puedan afectar $y$, pero no están incluidas en el modelo de regresión.
 
 $$
-y_i = \alpha + \beta x_i + u_i
+\begin{aligned}
+y_i = \alpha + \beta x_i + u_i \quad \therefore E(y|x_i) = \alpha + \beta x_i \\
+\therefore \quad y_i = \alpha + \beta x_i + u_i \rightarrow \text{Ecuación de regresión}
+\end{aligned}
 $$

@@ -177,6 +177,185 @@ As you work, you may start a local server to live preview this HTML book. This p
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{introducciuxf3n}{%
+\chapter{Introducción}\label{introducciuxf3n}}
+
+\hypertarget{anuxe1lisis-de-regresiuxf3n}{%
+\chapter{Análisis de regresión}\label{anuxe1lisis-de-regresiuxf3n}}
+
+\textbf{Econometría \(\implies\) Medición económica.}
+
+\hypertarget{metodologuxeda-cluxe1sica}{%
+\section{Metodología clásica}\label{metodologuxeda-cluxe1sica}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Planteamiento de teoría (hipótesis)\\
+\item
+  Especificación del modelo matemático\\
+\item
+  Especificación del modelo econométrico\\
+\item
+  Obtención de datos\\
+\item
+  Estimación de parámetros del modelo\\
+\item
+  Pruebas de hipótesis\\
+\item
+  Pronóstico (predicción)\\
+\item
+  Modelo para fines de control/política
+\end{enumerate}
+
+Ej. Función consumo keynesiana:
+
+\[
+c = \alpha + \beta y \quad \forall \ 0< \beta <1
+\]
+
+Las relaciones entre variables económicas son \textbf{inexactas}, dada la injerencia de otras variables:
+
+\[ 
+\underset{\text{Modelo econométrico} }{c = \alpha + \beta y + u}
+\]
+
+\[ 
+\underset{ \text{Variable aleatoria con propiedades probabilísticas} }{ u = \text{Error (perturbación estocástica)} } 
+\]
+
+\(u\) incluye todos los factores que afectan \textbf{consumo} pero no están en la ecuación: tamaño de familia, edades, etc.
+
+El modelo requiere ser estimado: obtener valores \(\alpha\) y \(\beta\) a partir de \textbf{datos.}
+
+Ej. Gasto en consumo personal
+
+\begin{itemize}
+\tightlist
+\item
+  Regresión: técnica estadística para el estudio de una \textbf{variable dependiente} que está en función de una o más \textbf{variables independientes.}
+\item
+  Usando los datos de consumo y PIB de BUA se obtiene:
+\end{itemize}
+
+\[ 
+\hat c = -231.8 + 0.7194 y
+\]
+
+Donde \(\alpha = -231.8, \beta = 0.7194, \hat c = \text{Consumo (estimado)}, y = \text{PIB}\).
+
+La interpretación consiste en que un incremento de tasa en el ingreso incrementa (en promedio) el consumo en 0.72 USD.
+
+Se debe probar si los valores estimados:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Son estadísticamente significativos \((\alpha, \beta \neq 0)\)\\
+\item
+  Confirman la teoría (hipótesis) que está siendo probada \((0<\beta<1)\)
+\end{enumerate}
+
+Si el modelo confirma la teoría (hipótesis), se pueden \textbf{pronosticar} valores futuros de la variable dependiente.
+
+Ej. Suponer un PIB esperado para 1995 de \(6,000\) mmd, ¿cuál es el pronóstico de consumo?
+
+\[
+\hat c = -231.8 + 0.7194(6,000) = 4,084.6 
+\]
+
+Suponer que el gobierno considera que un gasto de \$4,000 mmd mantendrá la tasa de desempleo en 6.5\%. ¿Cuál nivel de ingreso garantizará esta meta de consumo?
+
+\[
+\begin{aligned} 
+\hat c &= -231.8 + 0.7194y \\
+4,000 &= -231.8 + 0.7194y \\ 
+0.7194y &= 4,000 + 231.8 \\ 
+y &= \frac{4,231.8}{0.7194} \\ 
+y^* &= 5,882.40 
+\end{aligned}
+\]
+
+Un modelo estimado puede ser usado para fines de control o de política económica (fiscal y monetaria).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{probabilidad-condicional}{%
+\section{Probabilidad condicional}\label{probabilidad-condicional}}
+
+Suponer un país con una población de 60 familias. Se estudia el gasto en consumo familiar semanal \((y)\) y el ingreso familiar semanal \((x)\).
+
+Se presenta la distribución del gasto en consumo \((y)\) correspondiente a un ingreso fijo \((x)\): la distribución condicional de \(y\) dada \(x\).
+
+Para \(P(y|x = 80)\):
+
+\[ 
+\begin{aligned} 
+P(y=55|x=80) &= \frac{1}{5} \\ 
+P(y=60|x=80) &= \frac{1}{5} \\ 
+P(y=65|x=80) &= \frac{1}{5} \\ 
+P(y=70|x=80) &= \frac{1}{5} \\ 
+P(y=75|x=80) &= \frac{1}{5} 
+\end{aligned} 
+\]
+
+Para cada distribución de probabilidad condicional de \(y\), calculamos su \textbf{media (media condicional):}
+
+\[ 
+E(y|x=80) = 55\left( \frac{1}{5} \right) + 60\left( \frac{1}{5} \right) + 65\left( \frac{1}{5} \right) + 70\left( \frac{1}{5} \right) + 75\left( \frac{1}{5} \right) = 65
+\]
+
+\[
+\mu_{y|x=100} = \frac{\sum_{y}y_{i}}{n} = \frac{462}{6} = 77
+\]
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{funciuxf3n-de-regresiuxf3n-poblacional}{%
+\section{Función de regresión poblacional}\label{funciuxf3n-de-regresiuxf3n-poblacional}}
+
+Lugar geométrico de las medias condicionales de la variable dependiente para valores fijos de la variable independiente.
+
+Se puede deducir que: \(E(y|x_i) = f(x_i)\).
+
+\[
+E(y|x_i) \rightarrow \text{Función de Regresión Poblacional (FRP)}
+\]
+
+Forma funcional de la FRP:
+
+\[
+E(y|x_i) = \alpha + \beta x_i \rightarrow \underset{y = ax+b}{\text{Ecuación de recta}}
+\]
+
+\[
+\begin{array}{ccc} 
+\alpha, \beta & \rightarrow & \text{Coeficientes de regresión} \\
+\alpha & \rightarrow & \text{Intercepto} \\
+\beta & \rightarrow & \text{Coeficiente de la pendiente}
+\end{array}
+\]
+
+\textbf{Objetivo:} Estimar \(\alpha\) y \(\beta\) con base en observaciones de \(x\) y \(y\).\\
+Esta desviación de un \(y_i\) alrededor de su valor esperado se expresa como:
+
+\[
+\begin{aligned}
+u_i &= y_i - E(y|x_i) \\
+y_i &= E(y|x_i) + u_i
+\end{aligned}
+\]
+
+Donde \(u_i\) es el término de error estocástico, que representa todas las variables omitidas que puedan afectar \(y\), pero no están incluidas en el modelo de regresión.
+
+\[
+\begin{aligned}
+y_i = \alpha + \beta x_i + u_i \quad \therefore E(y|x_i) = \alpha + \beta x_i \\
+\therefore \quad y_i = \alpha + \beta x_i + u_i \rightarrow \text{Ecuación de regresión}
+\end{aligned}
+\]
 
   \bibliography{book.bib,packages.bib}
 
