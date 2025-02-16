@@ -246,13 +246,13 @@ $$
 En términos poblacionales:
 
 $$
-E(x) = \mu_x \ quad \ rightarrow \quad \text{La media de la variable aleatoria discreta}
+E(x) = \mu_x \quad \rightarrow \quad \text{La media de la variable aleatoria discreta}
 $$
 
 Propiedades del valor esperado $E(\cdot)$:
 
 1. $E(b) = b \quad \therefore \quad b \equiv \text{Constante}$
-2. $E(ax + b) = E(ax) + E(b) = aE(x) + b \quad \forall \quad a,b \text{Constantes}$
+2. $E(ax + b) = E(ax) + E(b) = aE(x) + b \quad \forall \quad a,b\equiv \text{Constantes}$
 3. $E(xy) = E(x)E(y) \quad \forall \quad x,y \quad \rightarrow \quad \text{Variables aleatorias independientes}$
 
 ### Varianza
