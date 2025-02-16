@@ -120,7 +120,7 @@
 
 \title{A Minimal Book Example}
 \author{John Doe}
-\date{2025-02-14}
+\date{2025-02-16}
 
 \begin{document}
 \maketitle
@@ -352,10 +352,145 @@ Donde \(u_i\) es el término de error estocástico, que representa todas las var
 
 \[
 \begin{aligned}
-y_i = \alpha + \beta x_i + u_i \quad \therefore E(y|x_i) = \alpha + \beta x_i \\
+y_i = \alpha + \beta x_i + u_i \quad \therefore \quad E(y|x_i) = \alpha + \beta x_i \\
 \therefore \quad y_i = \alpha + \beta x_i + u_i \rightarrow \text{Ecuación de regresión}
 \end{aligned}
 \]
+
+Adicionalmente, si se toma \(E(\cdot)\) a \(y_i\), tenemos que:
+\[
+\begin{aligned}
+y_i &= E(y|x_i) + u_i \\
+E(y|x_i) &= E[E(y|x_i)] + E(u_i|x_i) \\
+&= E(y|x_i) + E(u_i|x_i) \quad \therefore \\
+E(u_i|x_i) &= E(y|x_i) - E(y|x_i) \quad \therefore \\
+E(u_i|x_i) &= 0
+\end{aligned}
+\]
+---
+
+\hypertarget{funciuxf3n-de-regresiuxf3n-muestral}{%
+\section{Función de regresión muestral}\label{funciuxf3n-de-regresiuxf3n-muestral}}
+
+A diferencia del caso anterior, en realidad se trabaja con muestras. Se estima la FRP con base en información \textbf{muestral.}
+Suponer que se extrae una muestra d ela población de 60 familias donde se estudia el gasto en consumo y el ingreso familiar.
+Muestra aleatoria de 10 observaciones.
+
+{[}IMAGEN{]}
+
+La función de regresión muestral (FRM) puede escribirse como:
+\[
+\hat y_i = \hat \alpha + \hat \beta x_i 
+\]
+Donde:
+- \(\hat y_i \equiv\) \(y\) estimada
+- \(\hat \alpha_i \equiv\) estimador de \(\alpha\)
+- \(\hat \beta_i \equiv\) estimador de \(\beta\)
+
+Se estiman los parámetros poblacionales a partir de información muestral.
+
+\[
+\begin{array}{ccc}
+\text{Estimador} & \rightarrow & \text{Fórmula} \\
+\text{Estimado} & \rightarrow & \text{Valor numérico}
+\end{array}
+\]
+
+FRM (forma estocástica): \(y_i = \hat \alpha + \hat \beta x_i + \hat u_i\). Por lo tanto, \(\hat u_i\) es el residual muestral (estimado de \(u_i\)).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{objetivo-del-anuxe1lisis-de-regresiuxf3n}{%
+\section{Objetivo del análisis de regresión}\label{objetivo-del-anuxe1lisis-de-regresiuxf3n}}
+
+Estimar FRP, \(y_i = \alpha + \beta x_i + u_i\), a partir de estimar FRM, \(y_i = \hat \alpha + \hat \beta x_i + \hat u_i\).
+
+{[}IMAGEN{]}
+
+\hypertarget{conceptos-estaduxedsticos}{%
+\section{Conceptos estadísticos}\label{conceptos-estaduxedsticos}}
+
+\hypertarget{sumatoria-y-multiplicatoria}{%
+\subsection{Sumatoria y multiplicatoria}\label{sumatoria-y-multiplicatoria}}
+
+\[
+\sum_{i=1}^n x_i = x_i + x_2 + \ldots + x_n
+\]
+Propiedades del operador de sumatoria \((\sum)\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\sum_{i=k}^n = nk \quad \therefore \quad k \equiv \text{Constante}\).
+\item
+  \(\sum_{i=1}^n k x_i = k\sum_{i=1}^nx_i \quad \therefore \quad k \equiv \text{Constante}\).
+\item
+  \(\sum_{i=1}^n (a+bx_i) = \sum_{i=1}^n a + \sum_{i=1}^n bx_i = na + b \sum_{i=1}^n x_i \quad \forall \quad a,b \equiv \text{Constante}\).
+\item
+  \(\sum_{i=1}^n (x_i + y_i) = \sum_{i=1}^nx_i + \sum_{i=1}^n y_i\).
+\end{enumerate}
+
+Se pueden tener sumatorias múltiples:
+\[
+\begin{aligned}
+\sum_{i=1}^n\sum_{j=1}^m &= \sum_{i=1}^n (x_{i1} + x_{i2} + \ldots + x_{im}) \\
+&= (x_{11} + x_{12} + \ldots + x_{1m}) + (x_{21} + x_{22} + \ldots + x_{2m})  + \ldots + (x_{n1} + x_{n2} + \ldots + x_{nm})
+\end{aligned}
+\]
+Propiedades del operador de sumatoria \((\sum \sum)\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\sum_{i=1}^n\sum_{j=1}^m x_{ij} = \sum_{j=1}^m\sum_{i=1}^n \quad \rightarrow \quad \text{Intercambiable}\)
+\item
+  \(\sum_{i=1}^n\sum_{j=1}^m x_i y_j = \sum_{i=1}^n x_i \sum_{j=1}^m y_j\)
+\item
+  \(\sum_{i=1}^n\sum_{j=1}^m (x_{ij} + y_{ij}) = \sum_{i=1}^n\sum_{j=1}^m x_{ij} + \sum_{i=1}^n\sum_{j=1}^m y_{ij}\)
+\end{enumerate}
+
+Adicionalmente, el operador multiplicatoria:
+\[
+\Pi_{i=1}^n x_i = x_1\cdot x_2 \cdot \ldots \cdot x_n
+\]
+
+\hypertarget{valor-esperado}{%
+\subsection{Valor esperado}\label{valor-esperado}}
+
+El valor esperado de una variable aleatoria discreta se define como:
+\[
+E(x) = \sum_x xf(x)
+\]
+\[
+\begin{array}{ccc}
+\therefore \quad x & \rightarrow & \text{Valores de la variable aleatoria discreta} \\
+f(x) & \rightarrow & \text{FDP (discreta) de x}
+\end{array}
+\]
+
+En términos poblacionales:
+
+\[
+E(x) = \mu_x \ quad \ rightarrow \quad \text{La media de la variable aleatoria discreta}
+\]
+
+Propiedades del valor esperado \(E(\cdot)\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(E(b) = b \quad \therefore \quad b \equiv \text{Constante}\)
+\item
+  \(E(ax + b) = E(ax) + E(b) = aE(x) + b \quad \forall \quad a,b \text{Constantes}\)
+\item
+  \(E(xy) = E(x)E(y) \quad \forall \quad x,y \quad \rightarrow \quad \text{Variables aleatorias independientes}\)
+\end{enumerate}
+
+\hypertarget{varianza}{%
+\subsection{Varianza}\label{varianza}}
 
   \bibliography{book.bib,packages.bib}
 
