@@ -1,6 +1,6 @@
 # Análisis de regresión
 
-**Econometría $\implies$ Medición económica.**
+Econometría: Medición económica.
 
 ## Metodología clásica
 
@@ -158,6 +158,7 @@ E(u_i|x_i) &= E(y|x_i) - E(y|x_i) \quad \therefore \\
 E(u_i|x_i) &= 0
 \end{aligned}
 $$
+
 ---
 
 ## Función de regresión muestral
