@@ -199,9 +199,7 @@ FRM (forma estocástica): $y_i = \hat \alpha + \hat \beta x_i + \hat u_i$. Por l
 
 
 
-## Objetivo del análisis de regresión
-
-Estimar FRP, $y_i = \alpha + \beta x_i + u_i$, a partir de estimar FRM, $y_i = \hat \alpha + \hat \beta x_i + \hat u_i$.
+Objetivo del análisis de regresión: Estimar FRP, $y_i = \alpha + \beta x_i + u_i$, a partir de estimar FRM, $y_i = \hat \alpha + \hat \beta x_i + \hat u_i$.
 
 [IMAGEN]
 
