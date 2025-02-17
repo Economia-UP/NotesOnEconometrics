@@ -42,7 +42,12 @@ $$
 \hat c = -231.8 + 0.7194 y
 $$
 
-Donde $\alpha = -231.8, \beta = 0.7194, \hat c = \text{Consumo (estimado)}, y = \text{PIB}$.
+Donde:
+
+* $\alpha = -231.8$
+* $\beta = 0.7194$ 
+* $\hat c = \text{Consumo (estimado)}$
+* $y = \text{PIB}$.
 
 La interpretación consiste en que un incremento de tasa en el ingreso incrementa (en promedio) el consumo en 0.72 USD.
 
@@ -53,7 +58,7 @@ Se debe probar si los valores estimados:
 
 Si el modelo confirma la teoría (hipótesis), se pueden **pronosticar** valores futuros de la variable dependiente.
 
-Ej. Suponer un PIB esperado para 1995 de $6,000$ mmd, ¿cuál es el pronóstico de consumo?
+Ej. Suponer un PIB esperado para 1995 de 6,000 mmd, ¿cuál es el pronóstico de consumo?
 
 $$
 \hat c = -231.8 + 0.7194(6,000) = 4,084.6 
@@ -73,7 +78,7 @@ $$
 
 Un modelo estimado puede ser usado para fines de control o de política económica (fiscal y monetaria).
 
----
+
 
 ## Probabilidad condicional
 
@@ -103,7 +108,7 @@ $$
 \mu_{y|x=100} = \frac{\sum_{y}y_{i}}{n} = \frac{462}{6} = 77
 $$
 
----
+
 
 ## Función de regresión poblacional
 
@@ -159,7 +164,7 @@ E(u_i|x_i) &= 0
 \end{aligned}
 $$
 
----
+
 
 ## Función de regresión muestral
 
@@ -192,7 +197,7 @@ $$
 
 FRM (forma estocástica): $y_i = \hat \alpha + \hat \beta x_i + \hat u_i$. Por lo tanto, $\hat u_i$ es el residual muestral (estimado de $u_i$).
 
----
+
 
 ## Objetivo del análisis de regresión
 

@@ -65,6 +65,7 @@
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
 \usepackage{cancel}
+\usepackage[spanish,provide=*]{babel}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -164,7 +165,19 @@ Ej. Gasto en consumo personal
 \hat c = -231.8 + 0.7194 y
 \]
 
-Donde \(\alpha = -231.8, \beta = 0.7194, \hat c = \text{Consumo (estimado)}, y = \text{PIB}\).
+Donde:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\alpha = -231.8\)
+\item
+  \(\beta = 0.7194\)
+\item
+  \(\hat c = \text{Consumo (estimado)}\)
+\item
+  \(y = \text{PIB}\).
+\end{itemize}
 
 La interpretación consiste en que un incremento de tasa en el ingreso incrementa (en promedio) el consumo en 0.72 USD.
 
@@ -181,7 +194,7 @@ Se debe probar si los valores estimados:
 
 Si el modelo confirma la teoría (hipótesis), se pueden \textbf{pronosticar} valores futuros de la variable dependiente.
 
-Ej. Suponer un PIB esperado para 1995 de \(6,000\) mmd, ¿cuál es el pronóstico de consumo?
+Ej. Suponer un PIB esperado para 1995 de 6,000 mmd, ¿cuál es el pronóstico de consumo?
 
 \[
 \hat c = -231.8 + 0.7194(6,000) = 4,084.6 
@@ -200,8 +213,6 @@ y^* &= 5,882.40
 \]
 
 Un modelo estimado puede ser usado para fines de control o de política económica (fiscal y monetaria).
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{probabilidad-condicional}{%
 \section{Probabilidad condicional}\label{probabilidad-condicional}}
@@ -231,8 +242,6 @@ E(y|x=80) = 55\left( \frac{1}{5} \right) + 60\left( \frac{1}{5} \right) + 65\lef
 \[
 \mu_{y|x=100} = \frac{\sum_{y}y_{i}}{n} = \frac{462}{6} = 77
 \]
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{funciuxf3n-de-regresiuxf3n-poblacional}{%
 \section{Función de regresión poblacional}\label{funciuxf3n-de-regresiuxf3n-poblacional}}
@@ -289,8 +298,6 @@ E(u_i|x_i) &= 0
 \end{aligned}
 \]
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
 \hypertarget{funciuxf3n-de-regresiuxf3n-muestral}{%
 \section{Función de regresión muestral}\label{funciuxf3n-de-regresiuxf3n-muestral}}
 
@@ -326,8 +333,6 @@ Se estiman los parámetros poblacionales a partir de información muestral.
 \]
 
 FRM (forma estocástica): \(y_i = \hat \alpha + \hat \beta x_i + \hat u_i\). Por lo tanto, \(\hat u_i\) es el residual muestral (estimado de \(u_i\)).
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{objetivo-del-anuxe1lisis-de-regresiuxf3n}{%
 \section{Objetivo del análisis de regresión}\label{objetivo-del-anuxe1lisis-de-regresiuxf3n}}
