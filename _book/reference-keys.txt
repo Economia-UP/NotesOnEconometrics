@@ -4,7 +4,6 @@ metodología-clásica
 probabilidad-condicional
 función-de-regresión-poblacional
 función-de-regresión-muestral
-objetivo-del-análisis-de-regresión
 conceptos-estadísticos
 sumatoria-y-multiplicatoria
 valor-esperado
