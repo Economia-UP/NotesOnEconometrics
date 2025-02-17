@@ -29,7 +29,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="modelo-de-regresión-lineal-simple.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -87,7 +87,13 @@
 <li class="chapter" data-level="2.6.1" data-path="análisis-de-regresión.html"><a href="análisis-de-regresión.html#sumatoria-y-multiplicatoria"><i class="fa fa-check"></i><b>2.6.1</b> Sumatoria y multiplicatoria</a></li>
 <li class="chapter" data-level="2.6.2" data-path="análisis-de-regresión.html"><a href="análisis-de-regresión.html#valor-esperado"><i class="fa fa-check"></i><b>2.6.2</b> Valor esperado</a></li>
 <li class="chapter" data-level="2.6.3" data-path="análisis-de-regresión.html"><a href="análisis-de-regresión.html#varianza"><i class="fa fa-check"></i><b>2.6.3</b> Varianza</a></li>
+<li class="chapter" data-level="2.6.4" data-path="análisis-de-regresión.html"><a href="análisis-de-regresión.html#covarianza"><i class="fa fa-check"></i><b>2.6.4</b> Covarianza</a></li>
+<li class="chapter" data-level="2.6.5" data-path="análisis-de-regresión.html"><a href="análisis-de-regresión.html#coeficiente-de-correlación"><i class="fa fa-check"></i><b>2.6.5</b> Coeficiente de correlación</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="modelo-de-regresión-lineal-simple.html"><a href="modelo-de-regresión-lineal-simple.html"><i class="fa fa-check"></i><b>3</b> Modelo de regresión lineal simple</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="modelo-de-regresión-lineal-simple.html"><a href="modelo-de-regresión-lineal-simple.html#mínimos-cuadrados-ordinarios"><i class="fa fa-check"></i><b>3.1</b> Mínimos cuadrados ordinarios</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -257,10 +263,12 @@ Muestra aleatoria de 10 observaciones.</p>
 <span class="math display">\[
 \hat y_i = \hat \alpha + \hat \beta x_i
 \]</span>
-Donde:
-- <span class="math inline">\(\hat y_i \equiv\)</span> <span class="math inline">\(y\)</span> estimada
-- <span class="math inline">\(\hat \alpha_i \equiv\)</span> estimador de <span class="math inline">\(\alpha\)</span>
-- <span class="math inline">\(\hat \beta_i \equiv\)</span> estimador de <span class="math inline">\(\beta\)</span></p>
+Donde:</p>
+<ul>
+<li><span class="math inline">\(\hat y_i \equiv\)</span> <span class="math inline">\(y\)</span> estimada</li>
+<li><span class="math inline">\(\hat \alpha_i \equiv\)</span> estimador de <span class="math inline">\(\alpha\)</span></li>
+<li><span class="math inline">\(\hat \beta_i \equiv\)</span> estimador de <span class="math inline">\(\beta\)</span></li>
+</ul>
 <p>Se estiman los parámetros poblacionales a partir de información muestral.</p>
 <p><span class="math display">\[
 \begin{array}{ccc}
@@ -303,8 +311,8 @@ Propiedades del operador de sumatoria <span class="math inline">\((\sum \sum)\)<
 <li><span class="math inline">\(\sum_{i=1}^n\sum_{j=1}^m x_i y_j = \sum_{i=1}^n x_i \sum_{j=1}^m y_j\)</span></li>
 <li><span class="math inline">\(\sum_{i=1}^n\sum_{j=1}^m (x_{ij} + y_{ij}) = \sum_{i=1}^n\sum_{j=1}^m x_{ij} + \sum_{i=1}^n\sum_{j=1}^m y_{ij}\)</span></li>
 </ol>
-<p>Adicionalmente, el operador multiplicatoria:
-<span class="math display">\[
+<p>Adicionalmente, el operador multiplicatoria:</p>
+<p><span class="math display">\[
 \Pi_{i=1}^n x_i = x_1\cdot x_2 \cdot \ldots \cdot x_n
 \]</span></p>
 </div>
@@ -333,6 +341,59 @@ E(x) = \mu_x \quad \rightarrow \quad \text{La media de la variable aleatoria dis
 </div>
 <div id="varianza" class="section level3 hasAnchor" number="2.6.3">
 <h3><span class="header-section-number">2.6.3</span> Varianza<a href="análisis-de-regresión.html#varianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sea <span class="math inline">\(x\)</span> una variable aleatoria y <span class="math inline">\(E(\cdot) = \mu\)</span>. La dispersión de valores de <span class="math inline">\(x\)</span> alrededor de la media (valor esperado) es:</p>
+<p><span class="math display">\[
+var(x) = \sigma_x^2 = E(x-\mu)^2
+\]</span></p>
+<p>La desviación estándar de <span class="math inline">\(x\)</span> es:</p>
+<p><span class="math display">\[
+\text{Desv. est. }(x) = \sigma_x = [E(x-\mu)]^{1/2}
+\]</span></p>
+<p>La varianza y desviación estándar muestral se calcula como:</p>
+<p><span class="math display">\[
+\begin{array}{cc}
+s_x^2 = \frac{\sum_{i=1}^n (x_i - \bar x)}{n}, &amp; s_x = \sqrt{\frac{\sum_{i=1}^n (x_i - \bar x)}{n}}
+\end{array}
+\]</span></p>
+<p>Propiedades de la varianza:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(E(x-\mu) = E(x^2) - \mu^2 \quad \rightarrow \quad \text{Nota: Al desarrollar el cuadrado se simplifica.}\)</span></li>
+<li><span class="math inline">\(var(c)=0 \quad \because \quad c \equiv \text{Constante}\)</span></li>
+<li><span class="math inline">\(var(ax + b) = var(ax) + var(b) = a^2 var(x) + 0 = a^2 var(x)\)</span></li>
+<li><span class="math inline">\(var(x+y) = var(x) + var(y) \quad \because \quad x,y \text{ son variables aleatorias independientes}\)</span></li>
+<li><span class="math inline">\(var(ax + by) = var(ax) + var(by) \quad \because \quad x,y \text{ son variables aleatorias independientes}\)</span></li>
+<li><span class="math inline">\(var(x \pm y) = var(x) + var(y) \pm 2cov(x,y) \quad \because \quad x,y \text{ son variables aleatorias correlacionadas}\)</span></li>
+</ol>
+</div>
+<div id="covarianza" class="section level3 hasAnchor" number="2.6.4">
+<h3><span class="header-section-number">2.6.4</span> Covarianza<a href="análisis-de-regresión.html#covarianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sean <span class="math inline">\(x\)</span> y <span class="math inline">\(y\)</span> dos variables aleatorias con medias <span class="math inline">\(\mu_x\)</span> y <span class="math inline">\(\mu_y\)</span>, respectivamente. La covarianza se define como:</p>
+<p><span class="math display">\[
+cov(x,y) = E[(x-\mu_x)(y-\mu_y)] = \sigma_{xy}
+\]</span></p>
+<p>La covarianza muestral se calcula como:</p>
+<p><span class="math display">\[
+cov(x,y) = \frac{\sum_x \sum_y (x_i - \bar x)(y_i - \bar y)}{n} = s_{xy}
+\]</span></p>
+<p>Propiedades de la covarianza:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(cov(x,y) = E(xy) - \mu_x \mu_y = \mu_x \mu_y - \mu_x \mu_y = 0 \quad \because \quad x,y \text{ son independientes}\)</span></li>
+<li><span class="math inline">\(cov(a+bx, c+dy) = E\left[ \left[(a+bx) - E(a+bx)\right]\left[(c+dy) - E(c+dy)\right] \right] = E\left[ \left[ bx - bE(x) \right]\left[ dy - dE(y) \right] \right] = bd \, E\left[(x-\mu_{x})(y-\mu_{y})\right] = bd \, cov(x, y)\)</span></li>
+<li><span class="math inline">\(cov(c,x) = 0 \quad \because \quad c \equiv \text{Constante}\)</span></li>
+<li><span class="math inline">\(cov(c,d) = 0 \quad \because \quad c,d \text{ son constantes}\)</span></li>
+</ol>
+</div>
+<div id="coeficiente-de-correlación" class="section level3 hasAnchor" number="2.6.5">
+<h3><span class="header-section-number">2.6.5</span> Coeficiente de correlación<a href="análisis-de-regresión.html#coeficiente-de-correlación" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El coeficiente de correlación (poblacional), se define como:</p>
+<p><span class="math display">\[
+corr(x,y) = \rho = \frac{cov(x,y)}{\sqrt{var(x)var(y)}} = \frac{\sigma_{x,y}}{\sigma_x \sigma_y}
+\]</span>
+<span class="math inline">\(\rho\)</span> es una medida de asociación lineal entre 2 variables <span class="math inline">\(\rightarrow \quad -1 \leq \rho \leq 1\)</span>.
+El coeficiente de correlación (muestral se tiene:)</p>
+<p><span class="math display">\[
+corr(x,y) = \rho =  \frac{\sum_x \sum_y (x_i - \bar x)(y_i - \bar y)}{\sqrt{\sum_x (x_i - \bar x)^2} \sqrt{\sum_y(y_i - \bar y)^2}}
+\]</span></p>
 
 </div>
 </div>
@@ -343,7 +404,7 @@ E(x) = \mu_x \quad \rightarrow \quad \text{La media de la variable aleatoria dis
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="modelo-de-regresión-lineal-simple.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

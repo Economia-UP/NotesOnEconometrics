@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>#NotesOnEconometrics</title>
-  <meta name="description" content="#NotesOnEconometrics" />
+  <title>Capítulo 3 Modelo de regresión lineal simple | #NotesOnEconometrics</title>
+  <meta name="description" content="Capítulo 3 Modelo de regresión lineal simple | #NotesOnEconometrics" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="#NotesOnEconometrics" />
+  <meta property="og:title" content="Capítulo 3 Modelo de regresión lineal simple | #NotesOnEconometrics" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="#NotesOnEconometrics" />
+  <meta name="twitter:title" content="Capítulo 3 Modelo de regresión lineal simple | #NotesOnEconometrics" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="análisis-de-regresión.html"/>
+<link rel="prev" href="análisis-de-regresión.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -116,24 +116,99 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">#NotesOnEconometrics</h1>
-</div>
-<div id="bienvenido-a-notesoneconometrics" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Capítulo 1</span> Bienvenido a #NotesOnEconometrics<a href="index.html#bienvenido-a-notesoneconometrics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><strong>#NotesonEconometrics</strong> es una iniciativa creada por alumnos de la Licenciatura en Economía de la Universidad Panamericana, con el objetivo de ofrecer recursos académicos accesibles y de alta calidad sobre econometría. Este proyecto forma parte de Economía UP, un esfuerzo estudiantil dedicado a fomentar el aprendizaje y el análisis económico de manera rigurosa y práctica, poniendo a disposición de los estudiantes herramientas que faciliten el estudio y la aplicación de conceptos econométricos fundamentales y avanzados.</p>
-<p>En este sitio encontrarás contenido sintetizado de algunos de los libros más importantes en el campo de la econometría, como <em>Introductory Econometrics</em> de Jeffrey Wooldridge, <em>Basic Econometrics</em> de Damodar Gujarati e <em>Introduction to Econometrics</em> de G.S. Maddala. Estas obras han sido seleccionadas por su relevancia académica y su capacidad para explicar conceptos complejos de manera accesible. Además, el proyecto incorpora notas y recursos de cursos impartidos por profesores de la Universidad Panamericana, como Javier Alcántar Toledo y Eugenio Gómez Alatorre, cuyas enseñanzas han sido fundamentales para la formación en econometría de muchos estudiantes.</p>
-<p>El contenido de <strong>#NotesOnEconometrics</strong> está diseñado para ayudar a los estudiantes a comprender y aplicar conceptos clave de econometría. A través de explicaciones claras, ejemplos prácticos y tutoriales de R y Python, buscamos no solo simplificar el aprendizaje de la teoría econométrica, sino también facilitar su aplicación en problemas del mundo real. Esto incluye desde los fundamentos de la regresión lineal hasta temas más avanzados, proporcionando herramientas que permitan a los usuarios desarrollar habilidades analíticas rigurosas y aplicarlas en investigaciones académicas o en el análisis de datos económicos.</p>
-<p>Este proyecto está dirigido a estudiantes de economía, investigadores y cualquier persona interesada en aprender econometría de manera autodidacta o complementar sus estudios formales. Si estás cursando materias de econometría en la universidad o deseas fortalecer tus habilidades analíticas para enfrentar retos en el ámbito profesional, este sitio ha sido pensado para ti. La misión de <strong>#NotesOnEconometrics</strong> es hacer de la econometría un tema accesible y comprensible, apoyando a los estudiantes en su desarrollo académico y profesional a través de recursos cuidadosamente seleccionados y organizados.</p>
+<div id="modelo-de-regresión-lineal-simple" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Capítulo 3</span> Modelo de regresión lineal simple<a href="modelo-de-regresión-lineal-simple.html#modelo-de-regresión-lineal-simple" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Suponer una FRP de dos variables:</p>
+<p><span class="math display">\[
+y_i = \alpha + \beta x_i + u_i
+\]</span></p>
+<p>Dado que la FRP no es observable, se estima la FRM:</p>
+<p><span class="math display">\[
+\begin{array}{ccc}
+y_i = \hat \alpha + \hat \beta x_i + \hat u_i &amp; \rightarrow &amp; \hat y_i = \hat \alpha + \hat \beta x_i \, \therefore \\
+y_i = \hat y_i + \hat u_i &amp; &amp; \because \, \hat y_i \equiv \text{Valor estimado de } \hat y_i
+\end{array}
+\]</span></p>
+<p>¿Cómo se estima la FRM?</p>
+<p><span class="math display">\[
+\begin{aligned}
+y_i &amp;= \hat y_i + \hat u_i \, \therefore \\
+\hat u_i &amp;= y_i - \hat y_i \\
+&amp;= y_i - (\hat \alpha + \hat \beta x_i) \\
+&amp;= y_i - \hat \alpha - \hat \beta x_i \, \rightarrow \hat u_i \equiv \text{Residuos}
+\end{aligned}
+\]</span></p>
+<div id="mínimos-cuadrados-ordinarios" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Mínimos cuadrados ordinarios<a href="modelo-de-regresión-lineal-simple.html#mínimos-cuadrados-ordinarios" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Objetivo:</strong> Seleccionar la FRM de tal forma que la suma de los residuos al cuadrado sea la menor posible <span class="math inline">\(\rightarrow \, \sum \hat u_i^2 = \sum (y_i - \hat y_i)^2\)</span>.</p>
+<p>[IMAGEN]</p>
+<p><strong>Criterio de mínimos cuadrados:</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum \hat u_i^2 &amp;= \sum (y_i - \hat y_i)^2 \, \rightarrow \hat y_i = \hat \alpha + \hat \beta x_i \, \therefore \\
+&amp;= \sum(y_i - \hat \alpha - \hat \beta x_i)^2 \, \therefore \\
+\min_{\hat \alpha, \hat \beta} \sum \hat u_i^2 &amp;= \sum(y_i - \hat \alpha - \hat \beta x_i)^2
+\end{aligned}
+\]</span></p>
+<p>CPO (Condiciones de primer orden):</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{ \partial \sum \hat{u}_{i} }{ \hat{\partial} \alpha } &amp;= 2 \sum (y_{i} - \hat{\alpha } - \hat{\beta}x_{i})(-1) = 0  \\
+&amp;= -2 \sum (y_{i} - \hat{\alpha } - \hat{\beta}x_{i}) = 0 \\
+&amp;= \sum (y_{i} - \hat{\alpha } - \hat{\beta}x_{i}) = 0 \\
+\sum y_{i} &amp;= n \hat{\alpha } + \hat{\beta}\sum x_{i} \, \rightarrow \text{Ecuación normal (1)}
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{ \partial \sum \hat{u}_{i} }{ \hat{\partial} \beta } &amp;= 2 \sum (y_{i} - \hat{\alpha } - \hat{\beta}x_{i})(-x_{i}) = 0  \\
+&amp;= -2 \sum (y_{i} - \hat{\alpha } - \hat{\beta}x_{i})(x_{i}) = 0 \\
+&amp;= \sum (y_{i}x_{i} - \hat{\alpha } x_{i} - \hat{\beta}x_{i}^2) = 0 \\
+&amp;= \sum y_{i}x_{i} - \hat{\alpha }\sum x_{i} - \hat{\beta}\sum x_{i}^2 = 0 \\
+\sum y_{i}x_{i} &amp;= \hat{\alpha }\sum x_{i} + \hat{\beta}\sum x_{i}^2 \, \rightarrow \text{Ecuación normal (2)}
+\end{aligned}
+\]</span></p>
+<p>Retomemos las ecuaciones normales <span class="math inline">\((1)\)</span> y <span class="math inline">\((2)\)</span> y resolvemos para <span class="math inline">\(\hat \alpha\)</span> y <span class="math inline">\(\hat \beta\)</span>:</p>
+<p><span class="math display">\[
+\left .  
+\begin{aligned}  
+\sum y_{i} &amp;= n \hat{\alpha } + \hat{\beta}\sum x_{i} \\
+\sum y_{i}x_{i} &amp;= \hat{\alpha }\sum x_{i} + \hat{\beta}\sum x_{i}^2
+\end{aligned}
+\right\}  
+\quad \mathrm{Ax = d}
+\]</span></p>
+<p><span class="math display">\[
+\mathrm{A} =
+\begin{bmatrix}
+n &amp; \sum x_{i} \\
+\sum x_{i} &amp; \sum x_{i}^2
+\end{bmatrix}_{2 \times 2}
+,
+\quad
+\mathrm{x} =
+\begin{bmatrix}
+\hat{\alpha} \\
+\hat{ \beta}
+\end{bmatrix}_{2 \times 1}
+,
+\quad
+\mathrm{d} =
+\begin{bmatrix}
+\sum y_{i}  \\
+\sum x_{i} y_{i}
+\end{bmatrix}_{2 \times 1}
+\]</span></p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="análisis-de-regresión.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="análisis-de-regresión.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -164,7 +239,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-reglinsimple.Rmd",
 "text": "Edit"
 },
 "history": {

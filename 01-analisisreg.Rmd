@@ -175,6 +175,7 @@ $$
 \hat y_i = \hat \alpha + \hat \beta x_i 
 $$
 Donde:
+
 - $\hat y_i \equiv$ $y$ estimada
 - $\hat \alpha_i \equiv$ estimador de $\alpha$
 - $\hat \beta_i \equiv$ estimador de $\beta$
@@ -226,6 +227,7 @@ Propiedades del operador de sumatoria $(\sum \sum)$:
 3. $\sum_{i=1}^n\sum_{j=1}^m (x_{ij} + y_{ij}) = \sum_{i=1}^n\sum_{j=1}^m x_{ij} + \sum_{i=1}^n\sum_{j=1}^m y_{ij}$
 
 Adicionalmente, el operador multiplicatoria:
+
 $$
 \Pi_{i=1}^n x_i = x_1\cdot x_2 \cdot \ldots \cdot x_n
 $$
@@ -256,3 +258,68 @@ Propiedades del valor esperado $E(\cdot)$:
 3. $E(xy) = E(x)E(y) \quad \forall \quad x,y \quad \rightarrow \quad \text{Variables aleatorias independientes}$
 
 ### Varianza
+
+Sea $x$ una variable aleatoria y $E(\cdot) = \mu$. La dispersión de valores de $x$ alrededor de la media (valor esperado) es:
+
+$$
+var(x) = \sigma_x^2 = E(x-\mu)^2
+$$
+
+La desviación estándar de $x$ es:
+
+$$
+\text{Desv. est. }(x) = \sigma_x = [E(x-\mu)]^{1/2}
+$$
+
+La varianza y desviación estándar muestral se calcula como:
+
+$$
+\begin{array}{cc}
+s_x^2 = \frac{\sum_{i=1}^n (x_i - \bar x)}{n}, & s_x = \sqrt{\frac{\sum_{i=1}^n (x_i - \bar x)}{n}}
+\end{array}
+$$
+
+Propiedades de la varianza:
+
+1. $E(x-\mu) = E(x^2) - \mu^2 \quad \rightarrow \quad \text{Nota: Al desarrollar el cuadrado se simplifica.}$
+2. $var(c)=0 \quad \because \quad c \equiv \text{Constante}$
+3. $var(ax + b) = var(ax) + var(b) = a^2 var(x) + 0 = a^2 var(x)$
+4. $var(x+y) = var(x) + var(y) \quad \because \quad x,y \text{ son variables aleatorias independientes}$
+5. $var(ax + by) = var(ax) + var(by) \quad \because \quad x,y \text{ son variables aleatorias independientes}$
+6. $var(x \pm y) = var(x) + var(y) \pm 2cov(x,y) \quad \because \quad x,y \text{ son variables aleatorias correlacionadas}$
+
+### Covarianza
+
+Sean $x$ y $y$ dos variables aleatorias con medias $\mu_x$ y $\mu_y$, respectivamente. La covarianza se define como:
+
+$$
+cov(x,y) = E[(x-\mu_x)(y-\mu_y)] = \sigma_{xy}
+$$
+
+La covarianza muestral se calcula como:
+
+$$
+cov(x,y) = \frac{\sum_x \sum_y (x_i - \bar x)(y_i - \bar y)}{n} = s_{xy}
+$$
+
+Propiedades de la covarianza:
+
+1. $cov(x,y) = E(xy) - \mu_x \mu_y = \mu_x \mu_y - \mu_x \mu_y = 0 \quad \because \quad x,y \text{ son independientes}$
+2. $cov(a+bx, c+dy) = E\left[ \left[(a+bx) - E(a+bx)\right]\left[(c+dy) - E(c+dy)\right] \right] = E\left[ \left[ bx - bE(x) \right]\left[ dy - dE(y) \right] \right] = bd \, E\left[(x-\mu_{x})(y-\mu_{y})\right] = bd \, cov(x, y)$
+3. $cov(c,x) = 0 \quad \because \quad c \equiv \text{Constante}$
+4. $cov(c,d) = 0 \quad \because \quad c,d \text{ son constantes}$
+
+### Coeficiente de correlación
+
+El coeficiente de correlación (poblacional), se define como:
+
+$$
+corr(x,y) = \rho = \frac{cov(x,y)}{\sqrt{var(x)var(y)}} = \frac{\sigma_{x,y}}{\sigma_x \sigma_y}
+$$
+$\rho$ es una medida de asociación lineal entre 2 variables $\rightarrow \quad -1 \leq \rho \leq 1$.
+El coeficiente de correlación (muestral se tiene:)
+
+$$
+corr(x,y) = \rho =  \frac{\sum_x \sum_y (x_i - \bar x)(y_i - \bar y)}{\sqrt{\sum_x (x_i - \bar x)^2} \sqrt{\sum_y(y_i - \bar y)^2}}
+$$
+

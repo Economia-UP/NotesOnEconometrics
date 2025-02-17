@@ -9,3 +9,7 @@ conceptos-estadísticos
 sumatoria-y-multiplicatoria
 valor-esperado
 varianza
+covarianza
+coeficiente-de-correlación
+modelo-de-regresión-lineal-simple
+mínimos-cuadrados-ordinarios

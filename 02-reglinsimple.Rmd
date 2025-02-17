@@ -1,0 +1,100 @@
+# Modelo de regresión lineal simple
+
+Suponer una FRP de dos variables:
+
+$$
+y_i = \alpha + \beta x_i + u_i
+$$
+
+Dado que la FRP no es observable, se estima la FRM:
+
+$$
+\begin{array}{ccc}
+y_i = \hat \alpha + \hat \beta x_i + \hat u_i & \rightarrow & \hat y_i = \hat \alpha + \hat \beta x_i \, \therefore \\
+y_i = \hat y_i + \hat u_i & & \because \, \hat y_i \equiv \text{Valor estimado de } \hat y_i
+\end{array}
+$$
+
+¿Cómo se estima la FRM?
+
+$$
+\begin{aligned}
+y_i &= \hat y_i + \hat u_i \, \therefore \\
+\hat u_i &= y_i - \hat y_i \\
+&= y_i - (\hat \alpha + \hat \beta x_i) \\
+&= y_i - \hat \alpha - \hat \beta x_i \, \rightarrow \hat u_i \equiv \text{Residuos}
+\end{aligned}
+$$
+
+
+## Mínimos cuadrados ordinarios
+
+**Objetivo:** Seleccionar la FRM de tal forma que la suma de los residuos al cuadrado sea la menor posible $\rightarrow \, \sum \hat u_i^2 = \sum (y_i - \hat y_i)^2$.
+
+[IMAGEN]
+
+**Criterio de mínimos cuadrados:**
+
+$$
+\begin{aligned}
+\sum \hat u_i^2 &= \sum (y_i - \hat y_i)^2 \, \rightarrow \hat y_i = \hat \alpha + \hat \beta x_i \, \therefore \\
+&= \sum(y_i - \hat \alpha - \hat \beta x_i)^2 \, \therefore \\
+ \min_{\hat \alpha, \hat \beta} \sum \hat u_i^2 &= \sum(y_i - \hat \alpha - \hat \beta x_i)^2
+\end{aligned}
+$$
+
+CPO (Condiciones de primer orden):
+
+$$
+\begin{aligned}
+\frac{ \partial \sum \hat{u}_{i} }{ \hat{\partial} \alpha } &= 2 \sum (y_{i} - \hat{\alpha } - \hat{\beta}x_{i})(-1) = 0  \\
+&= -2 \sum (y_{i} - \hat{\alpha } - \hat{\beta}x_{i}) = 0 \\
+&= \sum (y_{i} - \hat{\alpha } - \hat{\beta}x_{i}) = 0 \\
+\sum y_{i} &= n \hat{\alpha } + \hat{\beta}\sum x_{i} \, \rightarrow \text{Ecuación normal (1)}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\frac{ \partial \sum \hat{u}_{i} }{ \hat{\partial} \beta } &= 2 \sum (y_{i} - \hat{\alpha } - \hat{\beta}x_{i})(-x_{i}) = 0  \\
+&= -2 \sum (y_{i} - \hat{\alpha } - \hat{\beta}x_{i})(x_{i}) = 0 \\
+&= \sum (y_{i}x_{i} - \hat{\alpha } x_{i} - \hat{\beta}x_{i}^2) = 0 \\
+&= \sum y_{i}x_{i} - \hat{\alpha }\sum x_{i} - \hat{\beta}\sum x_{i}^2 = 0 \\
+\sum y_{i}x_{i} &= \hat{\alpha }\sum x_{i} + \hat{\beta}\sum x_{i}^2 \, \rightarrow \text{Ecuación normal (2)}
+\end{aligned}
+$$
+
+Retomemos las ecuaciones normales $(1)$ y $(2)$ y resolvemos para $\hat \alpha$ y $\hat \beta$:
+
+$$
+\left .  
+\begin{aligned}  
+\sum y_{i} &= n \hat{\alpha } + \hat{\beta}\sum x_{i} \\
+\sum y_{i}x_{i} &= \hat{\alpha }\sum x_{i} + \hat{\beta}\sum x_{i}^2 
+\end{aligned} 
+\right\}  
+\quad \mathrm{Ax = d}
+$$
+
+$$
+\mathrm{A} = 
+\begin{bmatrix}
+n & \sum x_{i} \\
+\sum x_{i} & \sum x_{i}^2
+\end{bmatrix}_{2 \times 2}
+,
+\quad 
+\mathrm{x} =
+\begin{bmatrix}
+\hat{\alpha} \\
+\hat{ \beta}
+\end{bmatrix}_{2 \times 1}
+,
+\quad
+\mathrm{d} = 
+\begin{bmatrix}
+\sum y_{i}  \\
+\sum x_{i} y_{i}
+\end{bmatrix}_{2 \times 1}
+$$
+
