@@ -305,7 +305,7 @@ $$
 Propiedades de la covarianza:
 
 1. $cov(x,y) = E(xy) - \mu_x \mu_y = \mu_x \mu_y - \mu_x \mu_y = 0 \quad \because \quad x,y \text{ son independientes}$
-2. $\begin{aligned} cov(a+bx, c+dy) &= E\left[ \left[(a+bx) - E(a+bx)\right]\right. \\ &\left.\quad \left[(c+dy) - E(c+dy)\right] \right] \end{aligned}$
+2. $cov(a+bx, c+dy) = E\left[ \left[(a+bx) - E(a+bx)\right]\left[(c+dy) - E(c+dy)\right] \right] \\ = E\left[ \left[ bx - bE(x) \right]\left[ dy - dE(y) \right] \right] \\ = bd \, E\left[(x-\mu_{x})(y-\mu_{y})\right] \\ = bd \, cov(x, y)$
 3. $cov(c,x) = 0 \quad \because \quad c \equiv \text{Constante}$
 4. $cov(c,d) = 0 \quad \because \quad c,d \text{ son constantes}$
 
