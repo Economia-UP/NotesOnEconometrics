@@ -1,6 +1,6 @@
 --- 
 title: "#NotesOnEconometrics"
-# author: "John Doe"
+author: "Economía UP"
 # date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -11,11 +11,11 @@ bibliography: [book.bib, packages.bib]
 #   This is a minimal example of using the bookdown package to write a book.
 #   The HTML output format for this example is bookdown::gitbook,
 #   set in the _output.yml file.
-# link-citations: yes
-# github-repo: rstudio/bookdown-demo
+link-citations: yes
+github-repo: Economia-UP/NotesOnEconometrics
 ---
 
-# Bienvenido a #NotesOnEconometrics
+# Bienvenido
 
 **#NotesonEconometrics** es una iniciativa creada por alumnos de la Licenciatura en Economía de la Universidad Panamericana, con el objetivo de ofrecer recursos académicos accesibles y de alta calidad sobre econometría. Este proyecto forma parte de Economía UP, un esfuerzo estudiantil dedicado a fomentar el aprendizaje y el análisis económico de manera rigurosa y práctica, poniendo a disposición de los estudiantes herramientas que faciliten el estudio y la aplicación de conceptos econométricos fundamentales y avanzados.  
 

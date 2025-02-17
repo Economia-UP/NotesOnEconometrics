@@ -12,7 +12,7 @@
   <meta property="og:type" content="book" />
   
   
-  
+  <meta name="github-repo" content="Economia-UP/NotesOnEconometrics" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Capítulo 2 Análisis de regresión | #NotesOnEconometrics" />
@@ -20,6 +20,7 @@
   
   
 
+<meta name="author" content="Economía UP" />
 
 
 
@@ -74,7 +75,7 @@
 <li><a href="./">#NotesOnEconometrics</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Bienvenido a #NotesOnEconometrics</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Bienvenido</a></li>
 <li class="chapter" data-level="2" data-path="análisis-de-regresión.html"><a href="análisis-de-regresión.html"><i class="fa fa-check"></i><b>2</b> Análisis de regresión</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="análisis-de-regresión.html"><a href="análisis-de-regresión.html#metodología-clásica"><i class="fa fa-check"></i><b>2.1</b> Metodología clásica</a></li>
@@ -378,7 +379,7 @@ cov(x,y) = \frac{\sum_x \sum_y (x_i - \bar x)(y_i - \bar y)}{n} = s_{xy}
 <p>Propiedades de la covarianza:</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(cov(x,y) = E(xy) - \mu_x \mu_y = \mu_x \mu_y - \mu_x \mu_y = 0 \quad \because \quad x,y \text{ son independientes}\)</span></li>
-<li><span class="math inline">\(cov(a+bx, c+dy) = E\left[ \left[(a+bx) - E(a+bx)\right]\left[(c+dy) - E(c+dy)\right] \right] = E\left[ \left[ bx - bE(x) \right]\left[ dy - dE(y) \right] \right] = bd \, E\left[(x-\mu_{x})(y-\mu_{y})\right] = bd \, cov(x, y)\)</span></li>
+<li><span class="math inline">\(\begin{aligned} cov(a+bx, c+dy) &amp;= E\left[ \left[(a+bx) - E(a+bx)\right]\right. \\ &amp;\left.\quad \left[(c+dy) - E(c+dy)\right] \right] \end{aligned}\)</span></li>
 <li><span class="math inline">\(cov(c,x) = 0 \quad \because \quad c \equiv \text{Constante}\)</span></li>
 <li><span class="math inline">\(cov(c,d) = 0 \quad \because \quad c,d \text{ son constantes}\)</span></li>
 </ol>

@@ -1,4 +1,4 @@
-bienvenido-a-notesoneconometrics
+bienvenido
 análisis-de-regresión
 metodología-clásica
 probabilidad-condicional
