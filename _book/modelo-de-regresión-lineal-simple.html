@@ -199,6 +199,90 @@ n &amp; \sum x_{i} \\
 \sum x_{i} y_{i}
 \end{bmatrix}_{2 \times 1}
 \]</span></p>
+<p><span class="math display">\[
+\mathrm{x}^* = \mathrm{A}^{-1}\mathrm{d} \quad \because \quad\mathrm{A}^{-1} = \frac{1}{|\mathrm{A}|}adj. \mathrm{A}
+\]</span></p>
+<p><span class="math display">\[
+|\mathrm{A}| =
+\begin{vmatrix}
+n &amp; \sum x_{i} \\
+\sum x_{i} &amp; \sum x_{i}^2
+\end{vmatrix} = n\sum x_{i}^2 - \left( \sum x_{i} \right)^2
+\]</span>
+<span class="math display">\[
+\mathrm{C} =
+\begin{bmatrix}
+\sum x_{i}^2 &amp; -\sum x_{i} \\
+-\sum x_{i} &amp; n
+\end{bmatrix}
+\rightarrow
+\mathrm{C}&#39; = adj. \mathrm{A} =
+\begin{bmatrix}
+\sum x_{i}^2 &amp; -\sum x_{i} \\
+-\sum x_{i} &amp; n
+\end{bmatrix}
+\]</span>
+<span class="math display">\[
+\mathrm{A}^{-1} = \frac{1}{n \sum x_{i}^2 - \left( \sum x_{i} \right)^2} \begin{bmatrix}
+\sum x_{i}^2 &amp; -\sum x_{i} \\
+-\sum x_{i} &amp; n
+\end{bmatrix}
+\]</span></p>
+$$
+<span class="math display">\[\begin{aligned}
+
+\mathrm{x}^* &amp;= \frac{1}{n\sum x_{i}^2 - \left( \sum x_{i} \right)^2}
+\begin{bmatrix}
+\sum x_{i}^2 &amp; -\sum x_{i} \\
+-\sum x_{i} &amp; n
+\end{bmatrix}_{2 \times 2}
+\begin{bmatrix}
+\sum y_{i} \\
+\sum x_{i}y_{i}
+\end{bmatrix}_{2 \times 1} \\
+&amp;= \frac{1}{n\sum x_{i}^2 - \left( \sum x_{i} \right)^2}
+\begin{bmatrix}
+\sum x_{i}^2 \sum y_{i}-\sum x_{i}y_{i}\sum x_{i} \\
+n\sum x_{i}y_{i}-\sum x_{i}\sum y_{i}
+\end{bmatrix}_{2 \times 1}
+\end{aligned}\]</span>
+<p>$$</p>
+<p><span class="math display">\[
+\left .
+\begin{aligned}
+\therefore \\
+\hat{\alpha} &amp;= \frac{\sum x_{i}^2 \sum y_{i} - \sum x_{i}y_{i} \sum x_{i}}{n\sum x_{i}^2 - \left( \sum x_{i} \right)^2} \\
+\hat{\beta} &amp;= \frac{n\sum x_{i}y_{i} - \sum x_{i}\sum y_{i} }{n\sum x_{i}^2 - \left( \sum x_{i} \right)^2}
+\end{aligned}
+\right\} \quad \text{Estimadores de mínimos cuadrados ordinarios (MCO)}
+\]</span></p>
+<p>Existen resultados equivalentes para <span class="math inline">\(\hat{\alpha}\)</span> y <span class="math inline">\(\hat{\beta}\)</span>:
+1. Retomar ecuación normal (1):</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum y_{i} &amp;= n \hat{\alpha} + \hat{\beta} \sum x_{i} \\
+\frac{1}{n}\sum y_{i} &amp;= \left( n\hat{\alpha} + \hat{\beta} \sum x_{i} \right)\frac{1}{n} \\
+\frac{\sum y_{i}}{n} &amp;= \frac{n\hat{\alpha}}{n} + \hat{\beta} \sum \frac{x_{i}}{n} \\
+\bar{y} &amp;= \hat{\alpha} + \hat{\beta}\bar{x} \rightarrow \, \hat{\alpha} = \bar{y} - \hat{\beta}\bar{x}
+\end{aligned}
+\]</span>
+2. Retomar estimador <span class="math inline">\(\hat{\beta}\)</span>:
+<span class="math display">\[
+\hat{\beta} = \frac{n\sum x_{i}y_{i} - \sum x_{i}\sum y_{i}}{n\sum x_{i}^2 - \left( \sum x_{i} \right)^2} = \frac{cov(x,y)}{var(x)}
+\]</span></p>
+<p>Demostración:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\hat{\beta} &amp;= \frac{cov(x,y)}{var(x)} = \frac{\sum(x_{i} - \bar{x})(y_{i} - \bar{y})}{\sum(x_{i}-\bar{x})} \\
+&amp;=\frac{\sum x_{i}y_{i} - \bar{y}x_{i} - \bar{x}y_{i} + \bar{x}\bar{y}}{\sum x_{i}^2 - 2\bar{x} \sum x_{i} + \sum \bar{x}^2} \\
+&amp;= \frac{\sum x_{i}y_{i} - \bar{y_{i}}\sum x_{i} - \bar{x} \sum y_{i} + \sum \bar{x} \bar{y}}{\sum x_{i}^2 - 2\bar{x} \sum x_{i} + \sum \bar{x}^2} \\
+&amp;= \frac{\sum x_{i}y_{i} - \frac{\sum{y_{i}}}{n}\sum x_{i} - \frac{\sum{x}}{n} \sum y_{i} + n\bar{x} \bar{y}}{\sum x_{i}^2 - 2\frac{\sum{x_{i}}}{n} \sum x_{i} + n \bar{x}^2} \\
+&amp;= \frac{\sum x_{i}y_{i} - 2 \frac{\sum{y_{i}}\sum x_{i}}{n} + n\bar{x} \bar{y}}{\sum x_{i}^2 - 2\frac{\left( \sum{x_{i}} \right)^2}{n} + n \bar{x}^2} \\
+&amp;= \frac{n\sum x_{i}y_{i} - 2 \sum x_{i} \sum y_{i} + \sum x_{i} \sum y_{i}}{n\sum x_{i} -2 \left( \sum x_{i} \right)^2 + \left( \sum x_{i} \right)^2}  \\
+&amp;= \frac{n\sum x_{i}u_{i} - \sum x_{i} \sum y_{i}}{n\sum x_{i}^2 - \left( \sum x_{i} \right)^2} \\
+&amp;= \frac{cov(x,y)}{var(x)}
+\end{aligned}
+\]</span></p>
 
 </div>
 </div>
